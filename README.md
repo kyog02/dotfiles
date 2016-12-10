@@ -1,9 +1,15 @@
 #dotfiles  
+プライベートPCの作業環境  
+とりあえずプラグイン(ほぼ)不要のvimrcとbashrcを置いておく。  
 
-
-###How to  
+###How to use
 ---
-TODO
+Please after installing the tool
+
+	cd ~/
+	git clone https://github.com/kyog02/dotfiles.git
+	cd dotfiles
+	./ setup.sh
 
 ###Required Tools  
 ---
