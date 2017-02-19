@@ -3,6 +3,7 @@ syntax on
 set background=dark
 colorscheme hybrid
 
+"----------------------------------------------------
 " 行番号表示
 set number
 " カーソルが何行目の何列目にあるか表示
@@ -28,21 +29,21 @@ set ignorecase
 " 小文字で検索した時は区別しなくなります。
 set smartcase
 " 画面上でタブ文字が締める幅
-"set tabstop=4
+set tabstop=2
 " 連続した空白に対してタブキーやバックスペースキーでカーソルが動く幅
 "set softtabstop=4
 " 改行時に前のインデントを継承する
 set autoindent
 " autoindent時にインデントする文字数
-"set shiftwidth=4 
+set shiftwidth=2 
 " 改行時に入力された行の末尾に合わせて次の行のインデントを増減する
 set smartindent
 " tabを4つスペース分に設定
-set tabstop=4
+set tabstop=2
 " <<>>を入力した時に挿入されるtabがスペースいくつ分かを設定
-set shiftwidth=4
+set shiftwidth=2
 " ペーストする時にインデントさせない。
-set paste
+" set paste
 " 隠れバッファ
 set hidden
 " 下のラインを2行にする
@@ -67,6 +68,7 @@ set statusline+=[LOW=%l/%L]
 set laststatus=2
 " アンドゥファイルの生成を止める 
 set noundofile
+
 "----------------------------------------------------
 " コマンド補完
 "----------------------------------------------------
@@ -75,8 +77,6 @@ inoremap { {}<Left>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
-
-
 "----------------------------------------------------
 " GNU GLOBAL(gtags)
 "----------------------------------------------------
