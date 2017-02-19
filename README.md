@@ -19,6 +19,9 @@ Please after installing the tool
 
 
 
-###Reference Manuals  
+###Reference Articles 
 ---
 ・[dotfilesを管理しよう](http://qiita.com/massy22/items/5bdb97f8d6e93517f916 "title")  
+・[MacVim環境構築](http://mknthk.hatenablog.com/entry/20130405/1365169187 "title")  
+・[LinuxでのC言語開発環境について~.vimrcの例~](http://d.hatena.ne.jp/numozo/20100327/1269693923 "title")  
+・[vim黒背景好きの僕の心を揺さぶるカラースキーム「hybrid」](http://cocopon.me/blog/?p=841 "title")  
