@@ -68,6 +68,18 @@ set statusline+=[LOW=%l/%L]
 set laststatus=2
 " アンドゥファイルの生成を止める 
 set noundofile
+" エディタ上にタブバーを表示する設定(0 = 常に非表示 1 = 複数の時にタブ表示 2 = 常に表示)
+set showtabline=2
+
+"---------------------------------------------------
+"キー割り当て
+"---------------------------------------------------
+" ウィンドウを閉じる
+nmap <C-q> <C-w><C-w><C-w>q
+" 次の検索結果へジャンプする
+nmap <C-n> :cn<CR>
+" 前の検索結果へジャンプする
+nmap <C-p> :cp<CR>
 
 "----------------------------------------------------
 " コマンド補完
@@ -77,11 +89,10 @@ inoremap { {}<Left>
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
+
 "----------------------------------------------------
 " GNU GLOBAL(gtags)
 "----------------------------------------------------
-" ウィンドウを閉じる
-nmap <C-q> <C-w><C-w><C-w>q
 " ソースコードのgrep
 nmap <C-g> :Gtags -g
 " このファイルの関数一覧
@@ -90,8 +101,197 @@ nmap <C-l> :Gtags -f %<CR>
 nmap <C-j> :Gtags <C-r><C-w><CR>
 " カーソル以下の使用箇所を探す
 nmap <C-k> :Gtags -r <C-r><C-w><CR>
-" 次の検索結果へジャンプする
-nmap <C-n> :cn<CR>
-" 前の検索結果へジャンプする
-nmap <C-p> :cp<CR>
 
+"-----------------------------------------------------
+"dein.vim
+"-----------------------------------------------------
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=/Users/Kyog02/dotfiles/.vim/dein//repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('/Users/Kyog02/dotfiles/.vim/dein/')
+  call dein#begin('/Users/Kyog02/dotfiles/.vim/dein/')
+" Let dein manage dein
+" Required:
+  call dein#add('/Users/Kyog02/dotfiles/.vim/dein//repos/github.com/Shougo/dein.vim')
+" Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+" You can specify revision/branch/tag.
+  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+
+" Add Plugins
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('Shougo/unite.vim')
+	call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+  call dein#add('Shougo/neomru.vim')
+	call dein#add('Shougo/neocomplete.vim')
+	call dein#add('justmao945/vim-clang')
+  call dein#add('kana/vim-operator-user')
+	call dein#add('rhysd/vim-clang-format')
+
+" Required:
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required:
+filetype plugin indent on
+syntax enable
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+
+"End dein Scripts---------------------------
+
+"========================================================
+"プラグインの設定
+"=========================================================
+
+"-----------------------------------------
+"NERDTREE
+"-----------------------------------------
+"vim起動時にNERDTREEを起動
+"autocmd VimEnter * execute 'NERDTree'
+
+"起動時は、エディタ側にカーソルを合わせる
+function s:MoveToFileAtStart()
+	call feedkeys("\<C-w>")  "タブ移動
+  call feedkeys("\<C-l>")  "右側のタブに移動
+endfunction
+"autocmd VimEnter *  NERDTree | call s:MoveToFileAtStart()
+
+"他のバッファをすべて閉じた時にNERDTreeが開いていたらNERDTreeも一緒に閉じる。
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"隠しファイルの表示
+let NERDTreeShowHidden = 1
+
+"----------------------------------------------
+"Unite.vim
+"---------------------------------------------
+"インサートモードで開始(0 = OFF, 1 = ON)
+let g:unite_enable_start_insert=0
+"ヒストリー/ヤンク機能を有効化
+let g:unite_source_history_yank_enable =1
+"prefix keyの設定
+nmap <Space> [unite]
+" matcher をデフォルトにする(ドットファイル表示する)
+call unite#custom#source('file', 'matchers', "matcher_default")
+
+"スペースキーとaキーでカレントディレクトリを表示
+nnoremap <silent> [unite]a :<C-u>UniteWithBufferDir -buffer-name=files file<CR>
+"スペースキーとfキーでバッファと最近開いたファイル一覧を表示
+nnoremap <silent> [unite]f :<C-u>Unite<Space>buffer file_mru<CR>
+"スペースキーとdキーで最近開いたディレクトリを表示
+nnoremap <silent> [unite]d :<C-u>Unite<Space>directory_mru<CR>
+"スペースキーとbキーでバッファを表示
+nnoremap <silent> [unite]b :<C-u>Unite<Space>buffer<CR>
+"スペースキーとrキーでレジストリを表示
+nnoremap <silent> [unite]r :<C-u>Unite<Space>register<CR>
+"スペースキーとtキーでタブを表示
+nnoremap <silent> [unite]t :<C-u>Unite<Space>tab<CR>
+"スペースキーとhキーでヒストリ/ヤンクを表示
+nnoremap <silent> [unite]h :<C-u>Unite<Space>history/yank<CR>
+"スペースキーとoキーでoutline
+nnoremap <silent> [unite]o :<C-u>Unite<Space>outline<CR>
+"スペースキーとENTERキーでfile_rec:!
+nnoremap <silent> [unite]<CR> :<C-u>Unite<Space>file_rec:!<CR>
+"unite.vimを開いている間のキーマッピング
+autocmd FileType unite call s:unite_my_settings()
+function! s:unite_my_settings()"{{{
+    " ESCでuniteを終了
+    nmap <buffer> <ESC> <Plug>(unite_exit)
+endfunction"}}}
+
+"-----------------------------------------
+"NeoCompleate.vim
+"-----------------------------------------
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+       \ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+  let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g> neocomplete#undo_completion()
+inoremap <expr><C-l> neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  " For no inserting <CR> key.
+	"return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+  let g:neocomplete#sources#omni#input_patterns = {}
+endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^.\t]->\h\w*\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:]*\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:]*\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+
+"-----------------------------------------
+"vim-Clang
+"-----------------------------------------
+" set clang options for vim-clang
+let g:clang_c_options = '-std=c11'
+let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
+
+"-----------------------------------------
+"Formatter
+"-----------------------------------------
+map ,x <Plug>(operator-clang-format))
