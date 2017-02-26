@@ -1,6 +1,6 @@
 #dotfiles  
 プライベートPCの作業環境  
-とりあえずプラグイン(ほぼ)不要のvimrcとbashrcを置いておく。  
+todo:プラグインも導入したし、vimrcの行数も増えてきたので整理したい
 
 ###How to use
 ---
