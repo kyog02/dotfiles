@@ -90,6 +90,14 @@ inoremap {<Enter> {}<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
+"---------------------------------------------------
+"ctags
+"---------------------------------------------------
+"適当なソースをvimで開いて、トップに生成されたtagsファイルへパスを通す
+"todo:使い方分からず
+"set tags=/usr/local/repository/crow
+
+
 "----------------------------------------------------
 " GNU GLOBAL(gtags)
 "----------------------------------------------------
@@ -134,6 +142,7 @@ if dein#load_state('/Users/Kyog02/dotfiles/.vim/dein/')
 	call dein#add('justmao945/vim-clang')
   call dein#add('kana/vim-operator-user')
 	call dein#add('rhysd/vim-clang-format')
+	call dein#add('thinca/vim-quickrun')
 
 " Required:
   call dein#end()
@@ -295,3 +304,29 @@ let g:clang_cpp_options = '-std=c++1z -stdlib=libc++ --pedantic-errors'
 "Formatter
 "-----------------------------------------
 map ,x <Plug>(operator-clang-format))
+
+"-----------------------------------------
+"quickrun
+"-----------------------------------------
+"let g:quickrun_config = get(g:, 'quickrun_config', {})
+" vimproc を使って非同期に実行し，結果を quickfix に出力する
+"let g:quickrun_config._ = {
+"          \ 'outputter' : 'quickfix',
+"          \ 'runner' : 'vimproc'
+"         \ }
+
+"全ての出力バッファをウィンドウ下の幅8spで出力。出力がなかった場合は出力
+"バッファを閉じる。
+let g:quickrun_config = {
+\   "_" : {
+\       "outputter/buffer/split" : ":botright 8sp", 
+\       "outputter/buffer/close_on_empty" : 1 
+\   },
+\}
+
+"c++はclang++(c++1y)で実行
+let g:quickrun_config.cpp = {
+         \ 'command' : 'clang++',
+         \ 'cmdopt' : '-std=c++1y -Wall -Wextra',
+         \ }
+"todo:Boostライブラリ使用する場合はquickrunex-vimを使用する
