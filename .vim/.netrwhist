@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/Kyog02/.gem/specs/api.rubygems.org%443'
+let g:netrw_dirhist_2='/Users/Kyog02/.gem/specs/api.rubygems.org%443/quick'
+let g:netrw_dirhist_3='/Users/Kyog02/.gem/specs/api.rubygems.org%443/quick/Marshal.4.8'
+let g:netrw_dirhist_4='/Users/Kyog02/.bash_sessions'
+let g:netrw_dirhist_5='/Users/Kyog02'
+let g:netrw_dirhist_6='/Users/Kyog02/dotfiles'
+let g:netrw_dirhist_7='/Users/Kyog02/dotfiles/.git'
+let g:netrw_dirhist_8='/usr/local/repository/Open-AVB/daemons/gptp/common'
+let g:netrw_dirhist_9='/usr/local/repository/Open-AVB/thirdparty/cpputest/examples/AllTests'

@@ -1,0 +1,21 @@
+"*":
+  "atom-beautify":
+    cpp:
+      beautify_on_save: true
+  core:
+    disabledPackages: [
+      "language-gfm"
+    ]
+  editor:
+    fontFamily: "Ricty Diminished"
+    fontSize: 12
+  "exception-reporting":
+    userId: "3e9a4ea9-9d00-4085-913d-82a514b1dca7"
+  "markdown-preview":
+    breakOnSingleNewline: true
+  "markdown-preview-opener":
+    closePreviewWhenClosingEditor: true
+  "plantuml-viewer":
+    charset: "UTF-8"
+  "vim-mode-plus":
+    wrapLeftRightMotion: true

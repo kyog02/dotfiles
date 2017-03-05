@@ -81,6 +81,11 @@ nmap <C-n> :cn<CR>
 " 前の検索結果へジャンプする
 nmap <C-p> :cp<CR>
 
+"tab移動
+map <S-o> :tab ba<CR>
+map <Left> :tabp<CR>
+map <Right> :tabn<CR>
+
 "----------------------------------------------------
 " コマンド補完
 "----------------------------------------------------
@@ -136,13 +141,13 @@ if dein#load_state('/Users/Kyog02/dotfiles/.vim/dein/')
 " Add Plugins
   call dein#add('scrooloose/nerdtree')
   call dein#add('Shougo/unite.vim')
-	call dein#add('Shougo/vimproc.vim', {'build': 'make'})
+  call dein#add('Shougo/vimproc.vim', {'build': 'make'})
   call dein#add('Shougo/neomru.vim')
-	call dein#add('Shougo/neocomplete.vim')
-	call dein#add('justmao945/vim-clang')
+  call dein#add('Shougo/neocomplete.vim')
+  call dein#add('justmao945/vim-clang')
   call dein#add('kana/vim-operator-user')
-	call dein#add('rhysd/vim-clang-format')
-	call dein#add('thinca/vim-quickrun')
+  call dein#add('rhysd/vim-clang-format')
+  call dein#add('thinca/vim-quickrun')
 
 " Required:
   call dein#end()
@@ -171,7 +176,7 @@ endif
 
 "起動時は、エディタ側にカーソルを合わせる
 function s:MoveToFileAtStart()
-	call feedkeys("\<C-w>")  "タブ移動
+  call feedkeys("\<C-w>")  "タブ移動
   call feedkeys("\<C-l>")  "右側のタブに移動
 endfunction
 "autocmd VimEnter *  NERDTree | call s:MoveToFileAtStart()
@@ -214,10 +219,10 @@ nnoremap <silent> [unite]o :<C-u>Unite<Space>outline<CR>
 nnoremap <silent> [unite]<CR> :<C-u>Unite<Space>file_rec:!<CR>
 "unite.vimを開いている間のキーマッピング
 autocmd FileType unite call s:unite_my_settings()
-function! s:unite_my_settings()"{{{
+function! s:unite_my_settings()"{
     " ESCでuniteを終了
     nmap <buffer> <ESC> <Plug>(unite_exit)
-endfunction"}}}
+endfunction"}
 
 "-----------------------------------------
 "NeoCompleate.vim
@@ -237,7 +242,7 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions'
-       \ }
+    \ }
 
 " Define keyword.
 if !exists('g:neocomplete#keyword_patterns')

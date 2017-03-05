@@ -1,0 +1,78 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/4b/z_ptqp6s0x396vm828ljpfp80000gn/T/d-117125-40502-1tdl597/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/4b/z_ptqp6s0x396vm828ljpfp80000gn/T/d-117125-40502-1tdl597/package.tgz",
+        "spec": "/private/var/folders/4b/z_ptqp6s0x396vm828ljpfp80000gn/T/d-117125-40502-1tdl597/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/4b/z_ptqp6s0x396vm828ljpfp80000gn/T/apm-install-dir-117125-40502-1kp9icn"
+    ]
+  ],
+  "_from": "../d-117125-40502-1tdl597/package.tgz",
+  "_id": "tool-bar-markdown-writer@0.2.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/tool-bar-markdown-writer",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/4b/z_ptqp6s0x396vm828ljpfp80000gn/T/d-117125-40502-1tdl597/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/4b/z_ptqp6s0x396vm828ljpfp80000gn/T/d-117125-40502-1tdl597/package.tgz",
+    "spec": "/private/var/folders/4b/z_ptqp6s0x396vm828ljpfp80000gn/T/d-117125-40502-1tdl597/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-117125-40502-1tdl597/package.tgz",
+  "_shasum": "6392cd16eba116e09c1a309bb7c8ebf04079e84c",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/4b/z_ptqp6s0x396vm828ljpfp80000gn/T/d-117125-40502-1tdl597/package.tgz",
+  "_where": "/private/var/folders/4b/z_ptqp6s0x396vm828ljpfp80000gn/T/apm-install-dir-117125-40502-1kp9icn",
+  "bugs": {
+    "url": "https://github.com/zhuochun/tool-bar-md-writer/issues"
+  },
+  "consumedServices": {
+    "tool-bar": {
+      "versions": {
+        "^0 || ^1": "consumeToolBar"
+      }
+    }
+  },
+  "dependencies": {},
+  "description": "A tool-bar plugin that adds Markdown editing actions",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "homepage": "https://github.com/zhuochun/tool-bar-md-writer#readme",
+  "keywords": [
+    "tool-bar",
+    "markdown",
+    "markdown-writer",
+    "writing"
+  ],
+  "license": "MIT",
+  "main": "./lib/tool-bar-markdown-writer",
+  "name": "tool-bar-markdown-writer",
+  "optionalDependencies": {},
+  "packageDependencies": {
+    "tool-bar": "^0.4.0",
+    "markdown-writer": "^1.0.0",
+    "markdown-preview": "^0.109.0"
+  },
+  "readme": "# Toolbar for Markdown-Writer\n\n[![Apm Version](https://img.shields.io/apm/v/tool-bar-markdown-writer.svg)](https://atom.io/packages/markdown-writer)\n[![Apm Downloads](https://img.shields.io/apm/dm/tool-bar-markdown-writer.svg)](https://atom.io/packages/markdown-writer)\n\nA tool-bar plugin that adds Markdown editing buttons.\n\nPowered with [Markdown Writer](https://atom.io/packages/markdown-writer) and [Atom Tool Bar](https://atom.io/packages/tool-bar).\n\n![Toolbar for Markdown-Writer](http://i.imgur.com/GK5zB1L.png)\n\n## Installation\n\nYou have to install `tool-bar` and `markdown-writer` packages:\n\n```\napm install tool-bar markdown-writer\n```\n\nThen install this package:\n\n```\napm install tool-bar-markdown-writer\n```\n\n## Configuration\n\n- **Visibility**:\n  - `showToolbarOnMarkdown`: show toolbar in Markdown files.\n  - `showButtonsOnMarkdown`: show Markdown buttons in Markdown files. Useful when you have multiple plugins installed.\n  - `showButtonsOnAll`: always show toolbar and Markdown buttons\n- **Grammars**:\n  - An array of file types to be treated as Markdown files.\n\nHappy writing!\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhuochun/tool-bar-md-writer.git"
+  },
+  "version": "0.2.0"
+}
