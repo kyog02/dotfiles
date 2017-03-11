@@ -43,7 +43,7 @@ set tabstop=2
 " <<>>を入力した時に挿入されるtabがスペースいくつ分かを設定
 set shiftwidth=2
 " ペーストする時にインデントさせない。
-set paste
+"set paste
 " 隠れバッファ
 set hidden
 " 下のラインを2行にする
@@ -90,10 +90,10 @@ map <Right> :tabn<CR>
 " コマンド補完
 "----------------------------------------------------
 " 括弧を補完
-"inoremap { {}<Left>
-"inoremap {<Enter> {}<Left><CR><ESC><S-o>
-"inoremap ( ()<ESC>i
-"inoremap (<Enter> ()<Left><CR><ESC><S-o>
+inoremap { {}<Left>
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap ( ()<ESC>i
+inoremap (<Enter> ()<Left><CR><ESC><S-o>
 
 "---------------------------------------------------
 "ctags
