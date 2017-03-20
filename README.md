@@ -1,6 +1,6 @@
 # dotfiles  
-プライベートPCの作業環境  
-todo:プラグインも導入したし、vimrcの行数も増えてきたので整理したい
+- PCの作業環境  
+- todo:プラグインも導入したし、vimrcの行数も増えてきたので整理したい。。
 
 ## How to use
 Please after installing the tool
