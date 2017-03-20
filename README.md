@@ -1,8 +1,8 @@
-#dotfiles  
+# dotfiles  
 プライベートPCの作業環境  
 todo:プラグインも導入したし、vimrcの行数も増えてきたので整理したい
 
-###How to use
+### How to use
 ---
 Please after installing the tool
 
@@ -11,7 +11,7 @@ Please after installing the tool
 	cd dotfiles
 	./ setup.sh
 
-###Required Tools  
+### Required Tools  
 ---
 ・[GNU GLOBAL(Gtags)](http://www.gnu.org/software/global/)  
 ・[vim-hybrid](https://github.com/w0ng/vim-hybrid)  
@@ -19,7 +19,7 @@ Please after installing the tool
 
 
 
-###Reference Articles 
+### Reference Articles 
 ---
 ・[dotfilesを管理しよう](http://qiita.com/massy22/items/5bdb97f8d6e93517f916 "title")  
 ・[MacVim環境構築](http://mknthk.hatenablog.com/entry/20130405/1365169187 "title")  
