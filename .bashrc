@@ -7,6 +7,16 @@ export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 HISTSIZE=50000
 
+# google test Directory
+export GMOCK_DIR=~/WORKSPACE/googletest/googlemock
+export GTEST_DIR=~/WORKSPACE/googletest/googletest
+
+
+#---------------------------------------------------------------------------------
+
+#---------------------------------------------------------------------------------
+
+
 #---------------------------------------------------------------------------------
 #ターミナル起動時にtmux起動。
 #前回アタッチしていたセッションが残っていれば、再開するか確認する
