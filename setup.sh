@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#注意：複数回setup.shを実行すると、.vimや.atomといったディレクトリ内にもシンボリックリンクが作成されてしまう
 #元々HOMEディレクトリにあるdotfileにシンボリックリンクを設定
  DOT_FILES=(.bashrc .bash_profile .vimrc .vim .tmux.conf .atom .gitconfig .gitignore)
 
