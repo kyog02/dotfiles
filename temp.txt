@@ -1,0 +1,27 @@
+ubuntu
+ sudo apt-get install cmake make g++ xorg-dev libqt4-dev libcurl4-openssl-dev libavahi-compat-libdnssd-dev libssl-dev libx11-dev
+
+Cmake(BSD)
+https://ja.wikipedia.org/wiki/CMake
+
+make(GPL)
+https://ja.wikipedia.org/wiki/Make
+
+g++(GPL)
+https://ja.wikipedia.org/wiki/GNU%E3%82%B3%E3%83%B3%E3%83%91%E3%82%A4%E3%83%A9%E3%82%B3%E3%83%AC%E3%82%AF%E3%82%B7%E3%83%A7%E3%83%B3
+
+
+xorg-dev(GPL)
+http://metadata.ftp-master.debian.org/changelogs/main/x/xorg/xorg_7.7+19_copyright
+
+ibqt4-dev (GPL or LGPL)
+http://changelogs.ubuntu.com/changelogs/pool/main/q/qt4-x11/qt4-x11_4.8.5+git192-g085f851+dfsg-2ubuntu4.1/copyright
+
+libcurl4-openssl-dev(MIT)
+https://ja.wikipedia.org/wiki/CURL
+
+ libavahi-compat-libdnssd-dev(LGPL )
+https://packages.debian.org/ja/sid/libavahi-compat-libdnssd-dev
+
+libx11-dev(MITライセンス)
+http://changelogs.ubuntu.com/changelogs/pool/main/libx/libx11/libx11_1.6.3-1ubuntu2/copyright
